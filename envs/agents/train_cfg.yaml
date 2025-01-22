@@ -1,0 +1,23 @@
+params:
+  seed: 42
+
+  # environment wrapper clipping
+
+
+
+  load_checkpoint: True # flag which sets whether to load the checkpoint
+  load_path: '/workspace/isaaclab/source/VTT/params/track_agileVer1.pth' # path to the checkpoint to load
+
+  config:
+    name: track_agileVer1
+    env_name: rlgpu
+    device: 'cuda:1'
+    device_name: 'cuda:1'
+    multi_gpu: False
+    num_actors: -1  # configured from the script (based on num_envs)
+    learning_rate: 5e-4
+    max_epochs: 4090
+    seq_length: 10 # Size of GRU input window
+    check_fov: False # if true, reset when target get out of view
+    len_sample: 650 # Number of samples in one epoch
+

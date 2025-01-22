@@ -1,0 +1,11 @@
+*.pyc
+runs/
+*.npz
+*.pt
+*.tfevents*
+*.egg-info/
+scripts_saved/
+camera_output/
+params/
+test_runs/
+Usd_Explorer/
