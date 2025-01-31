@@ -1,0 +1,197 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/Grid_Roughness_B.png",
+            "source_hash": "067ca653dbb6d49d67963f49697e3b90d3d9cae3",
+            "target_url": "./SubUSDs/textures/Grid_Roughness_B.png",
+            "target_hash": "e248df46d2d610424f54457c2269895349f11374"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_C1_Normal.png",
+            "source_hash": "a31ee010fa3b060a9036f9a9f0cbe511fbacf7b2",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_C1_Normal.png",
+            "target_hash": "dda45e8511e71aae6ef80540a77f909d74adebc2"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/Gradient_Backdrop.exr",
+            "source_hash": "07484eca78ab2f92132145472d6add50da15ff58",
+            "target_url": "./SubUSDs/textures/Gradient_Backdrop.exr",
+            "target_hash": "9bf7bdffbe5fade81a1c1b69fcd75ad8d4acbf9a"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/materials/OmniGridExplorer.mdl",
+            "source_hash": "a5b9567e00f673d306366b66bce381f4a2de6adb",
+            "target_url": "./SubUSDs/materials/OmniGridExplorer.mdl",
+            "target_hash": "364be144e86b8e1ffa1d7b793bba30f707fa6f24"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_Floor_A1_Albedo.png",
+            "source_hash": "370c8ff9a3e3ef06905fb2593e6675ace5574aec",
+            "target_url": "./SubUSDs/textures/T_Floor_A1_Albedo.png",
+            "target_hash": "ad65e2e1f51dd59ba3a418bf6547c343c6dbfe6c"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_Floor_A1_Normal.png",
+            "source_hash": "1900482259943c679b56330e5113328d26e60d28",
+            "target_url": "./SubUSDs/textures/T_Floor_A1_Normal.png",
+            "target_hash": "a25f24e7e9f7e562bf032d5c5cec78a3a97a28e4"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_Floor_A1_ORM.png",
+            "source_hash": "fdc3591667bb20009403843af6255549cb077870",
+            "target_url": "./SubUSDs/textures/T_Floor_A1_ORM.png",
+            "target_hash": "37f66763df8415a7bc213ff03ee1f6bae36bae54"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_A1_Albedo.png",
+            "source_hash": "8e72c03ce877c2ec3f60ee46252fce38bf08efb7",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_A1_Albedo.png",
+            "target_hash": "b376d21432eaa17725f1fd7e6192e1fe43c6ca79"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_A1_Normal.png",
+            "source_hash": "c369a0c67286058708180f127dd454b909cab7d9",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_A1_Normal.png",
+            "target_hash": "7cdb521e7f6ff07a9b9122777cb42b542e863489"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_A1_ORM.png",
+            "source_hash": "d6cf38f1ae408659d6acaf4eba65f27a62a472af",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_A1_ORM.png",
+            "target_hash": "53c59ff81620cc8a66ae4d90b25fe8b32ac3533e"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_C1_Albedo.png",
+            "source_hash": "dd2c058ea47a5fe3b53e7eea49d7852ca55f1533",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_C1_Albedo.png",
+            "target_hash": "b48dee8d34aaab0ce3eb0707c413a721977db85b"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_GlossyMetal_C1_ORM.png",
+            "source_hash": "baed595d9dbafecef5b642071e4e3f604b3a7c32",
+            "target_url": "./SubUSDs/textures/T_GlossyMetal_C1_ORM.png",
+            "target_hash": "98ef821a6f1887c448a791cdd48de5db60fd7352"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_MetalFencing_A_Albedo.png",
+            "source_hash": "6f694453e42b0e36e8e74aecdef083ae1f900473",
+            "target_url": "./SubUSDs/textures/T_MetalFencing_A_Albedo.png",
+            "target_hash": "565e61cf618485b6e7f47dec8e64b1fc5291e1a1"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_MetalFencing_A_Normal.png",
+            "source_hash": "f2b75219351f08e7429c47711c32c58ad80c3e63",
+            "target_url": "./SubUSDs/textures/T_MetalFencing_A_Normal.png",
+            "target_hash": "0f30570e58f13d9bee5b07211a329c87573ca79a"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_MetalFencing_A_ORM.png",
+            "source_hash": "76536ad867b31fb9f806bae815c9a091e6cb8fc1",
+            "target_url": "./SubUSDs/textures/T_MetalFencing_A_ORM.png",
+            "target_hash": "be609930fc1aabd39c7a40ff018b466631f9d3d7"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampLong_A1_Albedo.png",
+            "source_hash": "df07ff4f17e97c7be0fd9a101fb2728ed9dfa025",
+            "target_url": "./SubUSDs/textures/T_RampLong_A1_Albedo.png",
+            "target_hash": "9a188cc81df42b22d3569a3670fbb8b0072ff9b3"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampLong_A1_Normal.png",
+            "source_hash": "bc9c8dfbc8bed126ce17f1862f315ea320acafb6",
+            "target_url": "./SubUSDs/textures/T_RampLong_A1_Normal.png",
+            "target_hash": "225198cd009eebf9ff3e3a367c3ba54ec065c5c3"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampLong_A1_ORM.png",
+            "source_hash": "c382a98f0f62d1eb613d7ec751dcabf3912c6409",
+            "target_url": "./SubUSDs/textures/T_RampLong_A1_ORM.png",
+            "target_hash": "c99bffaa40d634e3a63decc0839775baf62c7aae"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampShort_A1_Albedo.png",
+            "source_hash": "05d23b13d590df8d0e07eca8409ec699503923b3",
+            "target_url": "./SubUSDs/textures/T_RampShort_A1_Albedo.png",
+            "target_hash": "b76639d034568af83dd510123d3d4bab212c89f3"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampShort_A1_Normal.png",
+            "source_hash": "8344d9ee0113ec59f913777aa37dc038ed2b9694",
+            "target_url": "./SubUSDs/textures/T_RampShort_A1_Normal.png",
+            "target_hash": "59d338a851dc8b53f3aad1e430cfcd99d4b4d2fd"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_RampShort_A1_ORM.png",
+            "source_hash": "91938ac0dd0f3c1ba94549b3cccaa762b1c697ba",
+            "target_url": "./SubUSDs/textures/T_RampShort_A1_ORM.png",
+            "target_hash": "cbc744da6e313c5148c1207b3d766aceb760f290"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_YellowPaint_A1_Albedo.png",
+            "source_hash": "b3241963385c756268762eebf879efdc3d822f89",
+            "target_url": "./SubUSDs/textures/T_YellowPaint_A1_Albedo.png",
+            "target_hash": "644f6195915afbb5718029b89b016c389ba31112"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_YellowPaint_A1_Normal.png",
+            "source_hash": "61acac1ddc8cd9b8199e6596b030b24ffb486e73",
+            "target_url": "./SubUSDs/textures/T_YellowPaint_A1_Normal.png",
+            "target_hash": "032466131cf90f87deeea25792bd59878a7625a8"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/T_YellowPaint_A1_ORM.png",
+            "source_hash": "2a4d614b53dd48c99c2bf2795d51d8a855e73f61",
+            "target_url": "./SubUSDs/textures/T_YellowPaint_A1_ORM.png",
+            "target_hash": "2be3654213b6ab1eb0a4632289555e72e36fd969"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/Metal_Cast_ORM.png",
+            "source_hash": "13e07902c16490db8af011c082bddca64acee6e4",
+            "target_url": "./SubUSDs/textures/Metal_Cast_ORM.png",
+            "target_hash": "e7909459a01328ed605cf2c836fbea0eaa969156"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/ov_plastic_grain_b_01_normal.png",
+            "source_hash": "0cc5c13e128e42838759421263ec81b655047283",
+            "target_url": "./SubUSDs/textures/ov_plastic_grain_b_01_normal.png",
+            "target_hash": "17041581490a58c121bfbd14727db7f9185dae98"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/warn_black_01.png",
+            "source_hash": "68fb648c49601ed4084acb9ff06a3fe59ac7d21e",
+            "target_url": "./SubUSDs/textures/warn_black_01.png",
+            "target_hash": "f7aad1513761be2628efa9696082c730843df67e"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/warn_red_01.png",
+            "source_hash": "911222514bf7e2c8457e8a766d1623976edf1857",
+            "target_url": "./SubUSDs/textures/warn_red_01.png",
+            "target_hash": "a37efb5dbd348754a2ff6b38d5cecfc0c0b8d71d"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/warn_yellow_01.png",
+            "source_hash": "3c3ebf97d50299d9cb3e4a8cb2cc8bdc109b2702",
+            "target_url": "./SubUSDs/textures/warn_yellow_01.png",
+            "target_hash": "aff1fe9552b433d590125d0d02b9bb6e28bc9530"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/EPDM_color.jpg",
+            "source_hash": "f89fc6048dab80f8531be951e10ba0ba93cee900",
+            "target_url": "./SubUSDs/textures/EPDM_color.jpg",
+            "target_hash": "82584017e36aac7444fd00b839fafc68635aa821"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/texture_rough_height.png",
+            "source_hash": "729b34fccd88435fa36900c32f0251a9883cb25c",
+            "target_url": "./SubUSDs/textures/texture_rough_height.png",
+            "target_hash": "c62c1087b202e32a19f82a7d402fa86381d21873"
+        },
+        {
+            "source_url": "/home/wangzimo/Downloads/Factory/Usd_Explorer/Samples/Examples/2023_2/Factory/SubUSDs/textures/OmniGridExplorer/units_icon.png",
+            "source_hash": "9f0289d3d4c631fd2fdf47b2c5ea24854c245119",
+            "target_url": "./SubUSDs/textures/OmniGridExplorer/units_icon.png",
+            "target_hash": "77f15a46cd2bc0be1f729ebe488293b0168e2fb0"
+        }
+    ]
+}

@@ -11,7 +11,7 @@ import math
 import matplotlib.pyplot as plt
 
 import omni.isaac.lab.sim as sim_utils
-from omni.isaac.lab.assets import Articulation, ArticulationCfg, RigidObjectCfg, RigidObject
+from omni.isaac.lab.assets import Articulation, ArticulationCfg, RigidObjectCfg, RigidObject, AssetBaseCfg
 from omni.isaac.lab.actuators import ImplicitActuatorCfg
 from omni.isaac.lab.envs import DirectRLEnv, DirectRLEnvCfg
 from omni.isaac.lab.envs.ui import BaseEnvWindow
@@ -33,7 +33,7 @@ from omni.isaac.lab_assets.cartpole import CARTPOLE_CFG
 
 from PIL import Image
 # import sys
-# sys.path.append('/workspace/isaaclab/source/VTT')
+# sys.path.append('/home/wangzimo/VTT/IsaacLab/source/VTT')
 from myutils import quaternion_to_matrix, matrix_to_euler_angles, euler_angles_to_matrix, matrix_to_quaternion, rand_circle_point
 
 
@@ -84,22 +84,22 @@ class QuadcopterEnvCfg(DirectRLEnvCfg):
             restitution=0.0,
         ),
     )
-    terrain = TerrainImporterCfg(
-        prim_path="/World/ground",
-        terrain_type="plane",
-        collision_group=-1,
-        physics_material=sim_utils.RigidBodyMaterialCfg(
-            friction_combine_mode="multiply",
-            restitution_combine_mode="multiply",
-            static_friction=1.0,
-            dynamic_friction=1.0,
-            restitution=0.0,
-        ),
-        debug_vis=False,
-    )
+    # terrain = TerrainImporterCfg(
+    #     prim_path="/World/ground",
+    #     terrain_type="plane",
+    #     collision_group=-1,
+    #     physics_material=sim_utils.RigidBodyMaterialCfg(
+    #         friction_combine_mode="multiply",
+    #         restitution_combine_mode="multiply",
+    #         static_friction=1.0,
+    #         dynamic_friction=1.0,
+    #         restitution=0.0,
+    #     ),
+    #     debug_vis=False,
+    # )
 
     # scene
-    scene: InteractiveSceneCfg = InteractiveSceneCfg(num_envs=8, env_spacing=20, replicate_physics=True)
+    scene: InteractiveSceneCfg = InteractiveSceneCfg(num_envs=2, env_spacing=50, replicate_physics=True)
 
     # robot
     robot: ArticulationCfg = CRAZYFLIE_CFG.replace(prim_path="/World/envs/env_.*/Robot")
@@ -107,7 +107,7 @@ class QuadcopterEnvCfg(DirectRLEnvCfg):
     target: ArticulationCfg = ArticulationCfg(
         prim_path="/World/envs/env_.*/Target",
         spawn=sim_utils.UsdFileCfg(
-            usd_path="/workspace/isaaclab/source/VTT/assets/neo11.usd",
+            usd_path="/home/wangzimo/VTT/IsaacLab/source/VTT/assets/neo11.usd",
             rigid_props=sim_utils.RigidBodyPropertiesCfg(
                 disable_gravity=False,
                 max_depenetration_velocity=10.0,
@@ -140,31 +140,49 @@ class QuadcopterEnvCfg(DirectRLEnvCfg):
     wall: RigidObjectCfg = RigidObjectCfg(
         prim_path="/World/envs/env_.*/Wall",
         spawn=sim_utils.UsdFileCfg(
-            usd_path="/workspace/isaaclab/source/VTT/assets/table_instanceable.usd",
+            usd_path="/home/wangzimo/VTT/IsaacLab/source/VTT_local/assets/Collected_Factory/MFactory.usd",
             rigid_props=sim_utils.RigidBodyPropertiesCfg(),
             copy_from_source=False,
             semantic_tags= [("class", "wall")],
             mass_props=sim_utils.MassPropertiesCfg(mass=1.0),
         ),
-        init_state=RigidObjectCfg.InitialStateCfg(            pos=(0.0, 0.0, 0),
+        init_state=RigidObjectCfg.InitialStateCfg(pos=(0.0, 0.0, 0),
         ),
     )
+    # wall: AssetBaseCfg = AssetBaseCfg(
+    #     prim_path="/World/envs/env_.*/Wall",
+    #     init_state=AssetBaseCfg.InitialStateCfg(pos=[0.0, 0.0, 0.0], rot=[1.0, 0.0, 0.0, 0.0]),
+    #     spawn=sim_utils.UsdFileCfg(usd_path="/home/wangzimo/VTT/IsaacLab/source/VTT/assets/Collected_Factory/Factory.usd",),
+    # )
     thrust_to_weight = 1.9
     moment_scale = 0.01
-    # print("!!!!!!!!!!!!!!!!!!!!!!!!", quat_from_angle_axis(torch.tensor([[0, 1, 0]]), torch.tensor([math.pi / 2]))[0])
-    # camera
+    # # print("!!!!!!!!!!!!!!!!!!!!!!!!", quat_from_angle_axis(torch.tensor([[0, 1, 0]]), torch.tensor([math.pi / 2]))[0])
+    # # camera
     tiled_camera: TiledCameraCfg = TiledCameraCfg(
         prim_path="/World/envs/env_.*/Robot/body/Camera",
         offset=TiledCameraCfg.OffsetCfg(pos=(0, 0, -0.2), rot=(1, 0, 0, 0), convention="world"),
         data_types=["rgb", "distance_to_camera", "semantic_segmentation"],
         spawn=sim_utils.PinholeCameraCfg(
-            focal_length=24.0, focus_distance=400.0, horizontal_aperture=33.6, vertical_aperture=22.38, clipping_range=(0.1, 10.0)
+            focal_length=24.0, focus_distance=400.0, horizontal_aperture=33.6, vertical_aperture=22.38, clipping_range=(0.1, 50.0)
         ), # 70H * 50V
         width=1224,
         height=1224,
         colorize_semantic_segmentation=True,
         # semantic_filter = ["class"]
     )
+    # tiled_camera: TiledCameraCfg = TiledCameraCfg(
+    #     prim_path="/World/envs/env_.*/Camera",
+    #     offset=TiledCameraCfg.OffsetCfg(pos=(-1, 0, 5), rot=(1, 0, 0, 0), convention="world"),
+    #     # offset=TiledCameraCfg.OffsetCfg(pos=(0, 0, 10), rot=(0.707, 0, 0.707, 0), convention="world"),
+    #     data_types=["rgb", "distance_to_camera", "semantic_segmentation"],
+    #     spawn=sim_utils.PinholeCameraCfg(
+    #         focal_length=24.0, focus_distance=400.0, horizontal_aperture=33.6, vertical_aperture=22.38, clipping_range=(0.1, 50.0)
+    #     ), # 70H * 50V
+    #     width=1224,
+    #     height=1224,
+    #     colorize_semantic_segmentation=True,
+    #     # semantic_filter = ["class"]
+    # )
 
 class QuadcopterEnv(DirectRLEnv):
     cfg: QuadcopterEnvCfg
@@ -199,35 +217,42 @@ class QuadcopterEnv(DirectRLEnv):
         self.tar_acc_intervel = 125 # How many time steps will acceleration change once
         self.tar_acc = torch.zeros((self._num_envs, 2), dtype=torch.float, device=self.device)
 
-        self.target_seg_id = next((id_ for id_, info in self._tiled_camera.data.info['semantic_segmentation']['idToLabels'].items() if info.get('class') == "quadrotor"), None)
         
         # note: the number of steps might vary depending on how complicated the scene is.
         for _ in range(12):
             self.sim.render()
 
+        # self.target_seg_id = next((id_ for id_, info in self._tiled_camera.data.info['semantic_segmentation']['idToLabels'].items() if info.get('class') == "quadrotor"), None)
+
+
+
     def _setup_scene(self):
         self._robot = Articulation(self.cfg.robot)
         self._target = Articulation(self.cfg.target)
         self._wall = RigidObject(self.cfg.wall)
+        # self.wall_cfg = self.cfg.wall
+        # self._wall = self.wall_cfg.spawn.func(
+        #     self.wall_cfg.prim_path, self.wall_cfg.spawn, translation=self.wall_cfg.init_state.pos, orientation=self.wall_cfg.init_state.rot,
+        # )
         # create camera
         self._tiled_camera = TiledCamera(self.cfg.tiled_camera)
 
-        self.cfg.terrain.num_envs = self.scene.cfg.num_envs
-        self.cfg.terrain.env_spacing = self.scene.cfg.env_spacing
-        self._terrain = self.cfg.terrain.class_type(self.cfg.terrain)
+        # self.cfg.terrain.num_envs = self.scene.cfg.num_envs
+        # self.cfg.terrain.env_spacing = self.scene.cfg.env_spacing
+        # self._terrain = self.cfg.terrain.class_type(self.cfg.terrain)
 
         # clone, filter, and replicate
         self.scene.clone_environments(copy_from_source=False)
-        self.scene.filter_collisions(global_prim_paths=[self.cfg.terrain.prim_path])
+        # self.scene.filter_collisions(global_prim_paths=[self.cfg.terrain.prim_path])
 
         self.scene.sensors["tiled_camera"] = self._tiled_camera
         self.scene.articulations["target"] = self._target
         self.scene.articulations["robot"] = self._robot
-        self.scene.articulations["wall"] = self._wall
+        self.scene.rigid_objects["wall"] = self._wall
 
-        # add lights
-        light_cfg = sim_utils.DomeLightCfg(intensity=2000.0, color=(0.75, 0.75, 0.75))
-        light_cfg.func("/World/Light", light_cfg)
+        # # add lights
+        # light_cfg = sim_utils.DomeLightCfg(intensity=2000.0, color=(0.75, 0.75, 0.75))
+        # light_cfg.func("/World/Light", light_cfg)
 
 
     def _pre_physics_step(self, actions: torch.Tensor):
@@ -241,7 +266,8 @@ class QuadcopterEnv(DirectRLEnv):
         # adjust for camera bias
         if self.cfg.fpv:
             root_state[:, 2] += 0.2
-        root_state[:, :3] += self._terrain.env_origins
+        # root_state[:, :3] += self._terrain.env_origins
+        root_state[:, :3] += self.scene.env_origins
         root_state[:, 3:7] = self.euler2qua(action[:, 3:6]) # Attitude
         root_state[:, 7:10] = action[:, 6:9] # Velocity
         root_state[:, 10:] = action[:, 9:] # Acceleration
@@ -269,11 +295,24 @@ class QuadcopterEnv(DirectRLEnv):
         self._target.write_root_state_to_sim(root_state)
         
 
+        default_root_state = self._wall.data.default_root_state
+        default_root_state[:, :3] = 0
+        default_root_state[:, :3] += self.scene.env_origins
+        default_root_state[:, 7:] = 0
+        self._wall.write_root_pose_to_sim(default_root_state[:, :7])
+        self._wall.write_root_velocity_to_sim(default_root_state[:, 7:])
+        # print("Env Origin:", self.scene.env_origins)
+        # print("Data of Wall:", self._wall.data.root_state_w[0])
+        # print("Data of Robot:", self._robot.data.root_state_w[0])
+        
+
     def _update_states(self):
         robot_state = self._robot.data.root_state_w.clone()
-        robot_state[:, :3] -= self._terrain.env_origins
+        # robot_state[:, :3] -= self._terrain.env_origins
+        robot_state[:, :3] -= self.scene.env_origins
         target_state = self._target.data.root_state_w.clone()
-        target_state[:, :3] -= self._terrain.env_origins
+        # target_state[:, :3] -= self._terrain.env_origins
+        target_state[:, :3] -= self.scene.env_origins
         self.state_buf["robot"] = robot_state
         self.state_buf["target"] = target_state
         return
@@ -311,7 +350,8 @@ class QuadcopterEnv(DirectRLEnv):
         # adjust for camera bias
         if self.cfg.fpv:
             default_root_state[:, 2] += 0.2
-        default_root_state[:, :3] += self._terrain.env_origins[env_ids]
+        # default_root_state[:, :3] += self._terrain.env_origins[env_ids]
+        default_root_state[:, :3] += self.scene.env_origins[env_ids]
         default_root_state[:, 3:] = 0
         default_root_state[:, 3] = 1
 
@@ -331,13 +371,19 @@ class QuadcopterEnv(DirectRLEnv):
         default_root_state[:, 0] = 3
         default_root_state[:, 1] = 0
         default_root_state[:, 2] = 3
-        default_root_state[:, :3] += self._terrain.env_origins[env_ids]
+        # default_root_state[:, :3] += self._terrain.env_origins[env_ids]
+        default_root_state[:, :3] += self.scene.env_origins[env_ids]
         default_root_state[:, 7:] = 0
         self._target.write_root_pose_to_sim(default_root_state[:, :7], env_ids)
         self._target.write_root_velocity_to_sim(default_root_state[:, 7:], env_ids)
         self._target.write_joint_state_to_sim(joint_pos, joint_vel, None, env_ids)
         # print("Target position in reset:", default_root_state[0, :3])
 
+        default_root_state = self._wall.data.default_root_state[env_ids]
+        default_root_state[:, :3] = 0
+        default_root_state[:, 7:] = 0
+        self._wall.write_root_pose_to_sim(default_root_state[:, :7], env_ids)
+        self._wall.write_root_velocity_to_sim(default_root_state[:, 7:], env_ids)
         # if sensors are added to the scene, make sure we render to reflect changes in reset
         # print("WHAT THE FUCKKKKKKKKK?")
         if self.sim.has_rtx_sensors() and self.cfg.rerender_on_reset:
@@ -571,7 +617,7 @@ class QuadcopterEnv(DirectRLEnv):
 
         return reset_buf, reset_idx
 
-    def save_image(self, typ='rgb', path='/workspace/isaaclab/source/VTT/camera_output/frames/', name='tmp.png', idx=0):
+    def save_image(self, typ='rgb', path='/home/wangzimo/VTT/IsaacLab/source/VTT_local/camera_output/frames/', name='tmp.png', idx=0):
         # print("Segmentation Info", self._tiled_camera.data.info['semantic_segmentation'])
         # image_input = self._tiled_camera.data.output['instance_segmentation_fast']
         # image_input = self._tiled_camera.data.output["semantic_segmentation"]
