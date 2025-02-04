@@ -9,6 +9,9 @@ parser.add_argument("--task", type=str, default=None, help="Name of the task.")
 parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
 parser.add_argument("--max_iterations", type=int, default=None, help="Number of training iterations.")
 parser.add_argument("--checkpoint", type=str, default=None, help="Path to model checkpoint.")
+parser.add_argument("--docker", action="store_true", default=False, help="Whether process in docker")
+
+
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
@@ -85,6 +88,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 		agent_cfg["params"]["load_path"] = resume_path
 		print(f"[INFO]: Loading model checkpoint from: {agent_cfg['params']['load_path']}")
 	elif agent_cfg["params"]["load_checkpoint"]:
+		if args_cli.docker:
+			agent_cfg['params']['load_path'] = '/workspace/isaaclab' + agent_cfg['params']['load_path']
+		else:
+			agent_cfg['params']['load_path'] = '/home/wangzimo/VTT/IsaacLab' + agent_cfg['params']['load_path']
 		print(f"[INFO]: Loading model checkpoint from: {agent_cfg['params']['load_path']}")
 
 	# set the environment seed (after multi-gpu config for updated rank from agent seed)
@@ -105,10 +112,19 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 	# agent_cfg["params"]["config"]["full_experiment_name"] = log_dir
 
 	# dump the configuration into log-directory
-	dump_yaml(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "params", "env.yaml"), env_cfg)
-	dump_yaml(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "params", "agent.yaml"), agent_cfg)
-
-	writer = SummaryWriter(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "graphs"))
+	if args_cli.docker:
+		dump_yaml(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "params", "env.yaml"), env_cfg)
+		dump_yaml(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "params", "agent.yaml"), agent_cfg)
+		writer = SummaryWriter(os.path.join('/workspace/isaaclab/source/VTT/test_runs/', log_dir, "graphs"))
+	else:
+		dump_yaml(os.path.join('/home/wangzimo/VTT/IsaacLab/source/VTT/test_runs/', log_dir, "params", "env.yaml"), env_cfg)
+		dump_yaml(os.path.join('/home/wangzimo/VTT/IsaacLab/source/VTT/test_runs/', log_dir, "params", "agent.yaml"), agent_cfg)
+		writer = SummaryWriter(os.path.join('/home/wangzimo/VTT/IsaacLab/source/VTT/test_runs/', log_dir, "graphs"))
+	
+	if args_cli.docker:
+		image_path = '/workspace/isaaclab/source/VTT/camera_output/frames/'
+	else:
+		image_path = '/home/wangzimo/VTT/IsaacLab/source/VTT/camera_output/frames/'
 
 	device = env_cfg.sim.device
 	num_envs = env_cfg.scene.num_envs
@@ -175,7 +191,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
 				tar_state = state_buf["target"]
 
 				# env.save_image(typ="semantic_segmentation", name=f'{step}.png', idx=0)
-				env.save_image(name=f'{step}.png', idx=0)
+				env.save_image(name=f'{step}.png', idx=0, path=image_path)
 
 				tar_pos = tar_state[:, :3].detach()
 				now_quad_state = new_state_dyn

@@ -6,10 +6,10 @@ params:
 
 
   load_checkpoint: True # flag which sets whether to load the checkpoint
-  load_path: '/workspace/isaaclab/source/VTT/params/track_agileVer1.pth' # path to the checkpoint to load
+  load_path: '/source/VTT/params/track_agileVer0.pth' # path to the checkpoint to load
 
   config:
-    name: track_agileVer1
+    name: track_agileVer0
     env_name: rlgpu
     device: 'cuda:1'
     device_name: 'cuda:1'
